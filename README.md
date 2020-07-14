@@ -7,6 +7,17 @@
  1.  **Choose AMI role as EC2CodeDeploy**<br/>
      ![alt text](https://github.com/prabhakar2020/aws_code_deploy/blob/master/ConfigureInstance.png)<br/>
  1.  **Choose User Data: for installing required packages.**<br/>
+     #!/bin/bash<br/>
+     sudo yum -y update<br/>
+     sudo yum -y install ruby<br/>
+     sudo yum -y install wget<br/>
+     cd /home/ec2-user<br/>
+     wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install<br/>
+     sudo chmod +x ./install<br/>
+     sudo ./install auto<br/>
+     sudo yum install -y python-pip<br/>
+     sudo pip install awscli<br/>
+
      ![alt text](https://github.com/prabhakar2020/aws_code_deploy/blob/master/UserData.png)<br/>
  1.  **Security groups: which enable port SSH port 22 and HTTP 80 for application**<br/>
      ![alt text](https://github.com/prabhakar2020/aws_code_deploy/blob/master/configureSecutiryGroup.png)<br/>     
